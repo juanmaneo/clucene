@@ -1,0 +1,14 @@
+Source: clucene
+Priority: optional
+Section: libs
+Maintainer: Ahmed Saidi <ahmed7saidi@gmail.com>
+XSBC-Original-Maintainer: Ahmed Saidi <ahmed7saidi@gmail.com>
+Homepage: http://clucene.sourceforge.net
+
+Package: clucene
+Architecture: i386
+Depends: libc6 (>= 2.4), libgcc1 (>= 1:4.1.1), libstdc++6 (>= 4.1.1)
+Description: CLucene is a C++ port of Lucene.
+ It is a high-performance, full-featured text search 
+ engine written in C++. CLucene is faster than lucene
+ as it is written in C++.
