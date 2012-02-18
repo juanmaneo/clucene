@@ -116,3 +116,8 @@ SET_TARGET_PROPERTIES(clucene-contribs-lib PROPERTIES
     SOVERSION ${CLUCENE_SOVERSION}
     COMPILE_DEFINITIONS_DEBUG _DEBUG
 )
+
+#and install library
+install(TARGETS clucene-contribs-lib
+        DESTINATION ${LIB_DESTINATION}
+        COMPONENT runtime )
