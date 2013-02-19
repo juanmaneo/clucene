@@ -8,29 +8,32 @@ TEMP_DIR="temp-build-deb"
 SOURCE_ARCHIVE="${APP_NAME}-${APP_VERSION}.tar.gz"
 SOURCE_ARCHIVE_ORIG="${APP_NAME}_${APP_VERSION}.orig.tar.gz"
 
+echo '[*] Remove temp directory'
 rm -rvf $TEMP_DIR >> /dev/null
 
+echo '[*] Create temp directory'
 mkdir $TEMP_DIR
 
 #mkdir $TEMP_DIR/$APP_DIR_NAME
 
-cp -fvr $APP_FILES debian $TEMP_DIR/ #>> /dev/null
+#cp -fr $APP_FILES debian $TEMP_DIR/ 
 
 cd $TEMP_DIR
 
-git clone .. $APP_DIR_NAME
-mv debian $APP_DIR_NAME
+echo '[*] Copy source directory'
+git clone .. $APP_DIR_NAME > /dev/null
+#mv debian $APP_DIR_NAME
 
+echo '[*] Create archive'
+tar -zcf $SOURCE_ARCHIVE $APP_DIR_NAME/*
 
-tar -zcvf $SOURCE_ARCHIVE $APP_DIR_NAME/* #>> /dev/null
-
-cp -v $SOURCE_ARCHIVE $SOURCE_ARCHIVE_ORIG  #>> /dev/null
+cp -v $SOURCE_ARCHIVE $SOURCE_ARCHIVE_ORIG
 
 cd $APP_DIR_NAME
 
 debuild
 
 cd ..
-echo "[*] Generated deb:" *.deb
+echo '[*] Generated deb:' *.deb
 
-echo "[*] Done"
+echo '[*] Done'
