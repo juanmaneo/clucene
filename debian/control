@@ -1,8 +1,8 @@
 Source: clucene
 Priority: optional
 Section: libs
-Maintainer: Ahmed Saidi <ahmed7saidi@gmail.com>
-XSBC-Original-Maintainer: Ahmed Saidi <ahmed7saidi@gmail.com>
+Maintainer: Ahmed Saidi <ma7dev@gmail.com>
+XSBC-Original-Maintainer: Ahmed Saidi <ma7dev@gmail.com>
 Homepage: http://clucene.sourceforge.net
 
 Package: clucene
